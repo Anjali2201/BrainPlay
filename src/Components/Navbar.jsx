@@ -16,8 +16,9 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-// import getCookie from "../hooks/getCookie";
-// import removeCookie from "../hooks/removeCookie";
+import getCookie from "../hooks/getCookie";
+import removeCookie from "../hooks/removeCookie";
+import PsychologyIcon from "@mui/icons-material/Psychology";
 import logo from "../Assets/logo.gif";
 
 const styles = {
@@ -38,50 +39,37 @@ const styles = {
     fontSize: "18px",
     textTransform: "none",
     fontFamily: "Figtree",
-    // lineHeight: "29px",
     color: "#000000",
   },
   btn: {
     my: 2,
-    color: "#F9A826",
+    color: "#FFE6BC",
     mx: 1,
-    width: "100%",
+    width: "auto",
 
     "&:hover": {
-      backgroundColor: "#E5E5E566",
-      color: "black",
-      borderBottom: "3px solid #F9A826",
+      color: "#E8D8C9",
+      borderBottom: "3px solid #9A8174",
       borderRadius: "0px",
-    },
-  },
-  btn2: {
-    marginRight: "20px",
-    color: "black",
-    backgroundColor: "transparent",
-    height: "40px",
-    width: "auto",
-    "&:hover": {
-      backgroundColor: "#F9A826",
-      color: "black",
     },
   },
 };
 
 const buttons = ["Rules", "Login", "Register"];
-// let token = getCookie("login");
-// let username = "";
-// if (token) {
-//   username = JSON.parse(getCookie("login")).username;
-// }
-// console.log(username);
+let token = getCookie("login");
+let username = "";
+if (token) {
+  username = JSON.parse(getCookie("login")).username;
+}
+console.log(username);
 
-// const logout = () => {
-//   let token = getCookie("login");
-//   if (token) {
-//     removeCookie("login");
-//     window.location.reload();
-//   }
-// };
+const logout = () => {
+  let token = getCookie("login");
+  if (token) {
+    removeCookie("login");
+    window.location.reload();
+  }
+};
 export default function Appbar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -116,24 +104,14 @@ export default function Appbar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Grid sx={{ display: "flex" }}>
+    <Grid>
       <AppBar
         position="fixed"
-        component="nav"
         sx={{
-          backgroundColor: "transparent",
-          height: "180px",
-          boxShadow: "none",
+          backgroundColor: "#3B3B3B",
         }}
       >
-        <Toolbar
-          sx={{
-            m: 2,
-            backgroundColor: "#0c1821",
-            borderRadius: "10px",
-            boxShadow: "1px 1px 1px 1px #DADDD8",
-          }}
-        >
+        <Toolbar>
           {/* Drawer for Mobile View */}
 
           <Button
@@ -147,7 +125,7 @@ export default function Appbar(props) {
                 lg: "none",
                 xl: "none",
               },
-              color: "black",
+              color: "white",
             }}
           >
             <Grid container xs={12}>
@@ -157,7 +135,7 @@ export default function Appbar(props) {
               <Grid xs={11}>
                 <Typography
                   sx={{
-                    color: "black",
+                    color: "white",
                     fontWeight: 600,
                     width: "auto",
                   }}
@@ -179,11 +157,15 @@ export default function Appbar(props) {
             }}
           >
             <>
-              {/* <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-                <img src={logo} alt="logo" style={{ height: "50px" }} />
-              </Link> */}
+              <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+                <Typography
+                  sx={{ fontWeight: 600, width: "auto", color: "white" }}
+                >
+                  <PsychologyIcon /> Brain Play
+                </Typography>
+              </Link>
             </>
-            {/* 
+
             {!token ? (
               <ButtonGroup variant="text">
                 {buttons.map((button) => (
@@ -191,7 +173,7 @@ export default function Appbar(props) {
                     to={`/${button.toLowerCase()}`}
                     style={{ textDecoration: "none", color: "black" }}
                   >
-                    <Button sx={styles.btn2}>{button}</Button>
+                    <Button sx={styles.btn}>{button}</Button>
                   </Link>
                 ))}
               </ButtonGroup>
@@ -201,14 +183,14 @@ export default function Appbar(props) {
                   to="/feed"
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  <Button sx={btn}>Rules</Button>
+                  <Button sx={styles.btn}>Rules</Button>
                 </Link>
-                <Button sx={btn} onClick={logout}>
+                <Button sx={styles.btn} onClick={logout}>
                   Logout
                 </Button>
-                <Button sx={btn}>{username}</Button>
+                <Button sx={styles.btn}>{username}</Button>
               </ButtonGroup>
-            )} */}
+            )}
           </Grid>
 
           <Box component="nav">
