@@ -1,7 +1,6 @@
 import React from "react";
-import { Button, Grid, Typography, Box, Modal } from "@mui/material";
+import { Button, Grid, Typography, Modal } from "@mui/material";
 import getCookie from "../hooks/getCookie";
-import removeCookie from "../hooks/removeCookie";
 
 const Landingpage = () => {
   const [open, setOpen] = React.useState(false);
@@ -21,20 +20,22 @@ const Landingpage = () => {
   const startGame = () => {
     handleClose();
     const login = getCookie("login");
-    const logParse= JSON.parse(login);
-    if(logParse.level == 1){
+    const logParse = JSON.parse(login);
+    if (logParse.level == 1) {
       window.location.href = "/game1";
     }
-    if(logParse.level == 2){
+    if (logParse.level == 2) {
       window.location.href = "/game2";
     }
-    if(logParse.level == 3){
+    if (logParse.level == 3) {
       window.location.href = "/game3";
     }
-    if(logParse.level == 4){
+    if (logParse.level == 4) {
       window.location.href = "/game4";
     }
-    //window.location.href = "/game1";
+    if (logParse.level == 5) {
+      window.location.href = "/completed";
+    }
   };
 
   return (
@@ -48,40 +49,45 @@ const Landingpage = () => {
     >
       <Grid
         item
-        xs={12}
+        xs={7}
         sx={{
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          backdropFilter: "blur(5px)",
+          backgroundColor: "rgba(0,0,0,0.4)",
+          borderRadius: "10px",
+          p: 4,
         }}
       >
         <Typography
           sx={{
-            color: "#3D2F2A",
             textAlign: "center",
             width: "auto",
             fontSize: "3rem",
+            color: "#CED4DA",
           }}
         >
           Brain Play
         </Typography>
 
         <Typography
-          sx={{ color: "#9A8174", textAlign: "center", width: "auto" }}
+          sx={{ color: "#ADB5BD", textAlign: "center", width: "auto" }}
         >
           "Play your way to success with BrainPlay: Where soft skills meet fun!"
         </Typography>
         <Button
           onClick={beginGame}
           sx={{
-            color: "#3D2F2A",
-            backgroundColor: "#F2E9E4",
+            color: "black",
             marginTop: "1rem",
             fontSize: "1rem",
+            backgroundColor: "white",
 
             "&:hover": {
-              border: "1px solid #3D2F2A",
+              backgroundColor: "#E9ECEF",
+              color: "black",
             },
           }}
         >
@@ -96,64 +102,45 @@ const Landingpage = () => {
               left: "50%",
               transform: "translate(-50%, -50%)",
               width: "auto",
-              bgcolor: "#3D2F2A",
               boxShadow: 24,
               p: 4,
               borderRadius: "10px",
+              backgroundColor: "#212529",
             }}
           >
             <Grid item xs={12}>
-              <Typography sx={{ fontSize: "1.5rem", color: "#E8D8C9" }}>
+              <Typography sx={{ fontSize: "1.5rem", color: "#F8F9FA" }}>
                 Welcome to BrainPlay!
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography sx={{ fontSize: "1rem", color: "#E8D8C9" }}>
-                Rules : <br />
-                1. You will be given a set of questions.
-                <br /> 2. You will have 30 seconds to answer each question.{" "}
-                <br />
-                3. You will be given 3 lifelines. <br />
-                4. You can use the lifelines only once. <br />
-                5. You can skip a question only once.
-                <br /> 6. You will be given 10 points for each correct answer.{" "}
-                <br />
-                7. You will be deducted 5 points for each wrong answer. <br />
-                8. You will be deducted 10 points for each skipped question.
+              <Typography sx={{ fontSize: "1rem", color: "#F8F9FA" }}>
+                BrainPlay is a game that helps you develop your soft skills
+                through a series of fun and interactive games. You will be
+                presented with a series of questions and scenarios that will
+                help you develop your soft skills. You will be given a score at
+                the end of each game. The higher your score, the more you have
+                developed your soft skills. You will be able to track your score
+                through Leaderboard.
               </Typography>
             </Grid>
 
             <Grid item xs={12}>
-              {/* // Agree to terms and conditions button */}
-              <input type="checkbox" id="terms" name="terms" value="terms" />
-              <label
-                for="terms"
-                style={{
-                  color: "#E8D8C9",
-                  fontSize: "1.5rem",
-                  marginLeft: "0.5rem",
-                  marginTop: "1rem",
-                }}
-              >
-                I agree to the terms and conditions of BrainPlay.
-              </label>
-            </Grid>
-            <Grid item xs={12}>
               <Button
                 onClick={startGame}
                 sx={{
-                  color: "#3D2F2A",
-                  backgroundColor: "#F2E9E4",
+                  color: "black",
                   marginTop: "1rem",
                   fontSize: "1rem",
+                  backgroundColor: "white",
 
                   "&:hover": {
-                    border: "1px solid #F2E9E4",
-                    color: "#F2E9E4",
+                    backgroundColor: "#E9ECEF",
+                    color: "black",
                   },
                 }}
               >
-                Start
+                Begin Game
               </Button>
             </Grid>
           </Grid>

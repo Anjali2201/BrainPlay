@@ -43,19 +43,19 @@ const styles = {
   },
   btn: {
     my: 2,
-    color: "#FFE6BC",
+    color: "#CED4DA",
     mx: 1,
     width: "auto",
 
     "&:hover": {
-      color: "#E8D8C9",
-      borderBottom: "3px solid #9A8174",
+      color: "#CED4DA",
+      borderBottom: "1px solid #CED4DA",
       borderRadius: "0px",
     },
   },
 };
 
-const buttons = ["Rules", "Login", "Register"];
+const buttons = ["Login", "Register"];
 let token = getCookie("login");
 let username = "";
 if (token) {
@@ -108,7 +108,7 @@ export default function Appbar(props) {
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: "#3B3B3B",
+          backgroundColor: "#00000066",
         }}
       >
         <Toolbar>
@@ -179,12 +179,9 @@ export default function Appbar(props) {
               </ButtonGroup>
             ) : (
               <ButtonGroup variant="text">
-                <Link
-                  to="/feed"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  <Button sx={styles.btn}>Rules</Button>
-                </Link>
+                <Button sx={styles.btn} 
+                href="/leaderboard"
+                >LeaderBoard</Button>
                 <Button sx={styles.btn} onClick={logout}>
                   Logout
                 </Button>

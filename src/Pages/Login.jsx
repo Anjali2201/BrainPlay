@@ -1,20 +1,9 @@
 import React, { Component, useEffect } from "react";
 import axios from "axios";
-import {
-  Grid,
-  TextField,
-  Button,
-  Typography,
-  // Link,
-  Modal,
-  Box,
-} from "@mui/material";
-import { Link } from "react-router-dom";
-import { ButtonGroup } from "@mui/material";
+import { Grid, TextField, Button, Typography, Modal, Box } from "@mui/material";
+import Link from "@mui/material/Link";
 import setCookie from "../hooks/setCookie";
-import getCookie from "../hooks/getCookie";
 import removeCookie from "../hooks/removeCookie";
-import { useNavigate } from "react-router-dom";
 
 const buttons = {
   margin: "8px",
@@ -96,7 +85,7 @@ class Signin extends Component {
         console.log(response.data.user.name);
         if (response.data.user.admin == true) {
           this.state.lastpage = "/admin";
-        } else{
+        } else {
           this.state.lastpage = "/";
         }
         const cookieState = {
@@ -105,7 +94,6 @@ class Signin extends Component {
           username: response.data.user.name,
           level: response.data.user.level,
           admin: response.data.user.admin,
-          loginCount: response.data.user.loginCount,
         };
         console.log("LOGGED IN");
         modalText = "Logged In Successfully !!";
@@ -238,31 +226,6 @@ class Signin extends Component {
                 Login
               </Button>
             </form>
-
-            <ButtonGroup
-              sx={{
-                display: "flex",
-                backgroundColor: "transparent",
-                mt: "100px",
-                justifyContent: "center",
-                boxShadow: "none",
-              }}
-            >
-              <Button sx={btn}>
-                <Link
-                  style={{ textDecoration: "None", color: "black" }}
-                  to={`/forgotpassword`}
-                >
-                  Forgot Password
-                </Link>
-              </Button>
-              <Link
-                style={{ textDecoration: "None", color: "black" }}
-                to="/register"
-              >
-                <Button sx={btn}>New User? Sign Up</Button>
-              </Link>
-            </ButtonGroup>
           </Grid>
         </Grid>
 
@@ -279,7 +242,7 @@ class Signin extends Component {
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
               <Link
                 style={{ textDecoration: "None", color: "black" }}
-                to={this.state.lastpage}
+                href={this.state.lastpage}
               >
                 <Button
                   style={buttons}
