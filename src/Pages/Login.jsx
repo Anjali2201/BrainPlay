@@ -5,10 +5,11 @@ import {
   TextField,
   Button,
   Typography,
-  Link,
+  // Link,
   Modal,
   Box,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 import { ButtonGroup } from "@mui/material";
 import setCookie from "../hooks/setCookie";
 import getCookie from "../hooks/getCookie";
@@ -82,19 +83,6 @@ class Signin extends Component {
     });
   };
 
-  navigation = () => {
-    const navigate = useNavigate();
-    //navigate('/Answered');
-    useEffect(() => {
-      let login = getCookie("login");
-      if (login) {
-        navigate("/");
-      } else {
-        navigate("/login");
-      }
-    });
-  };
-
   submitHandler = (e) => {
     e.preventDefault();
     const newstate = {
@@ -106,10 +94,18 @@ class Signin extends Component {
       .post("http://localhost:8000/api/user/login/", newstate)
       .then((response) => {
         console.log(response.data.user.name);
+        if (response.data.user.admin == true) {
+          this.state.lastpage = "/admin";
+        } else{
+          this.state.lastpage = "/";
+        }
         const cookieState = {
           email: this.state.email,
           password: this.state.password,
           username: response.data.user.name,
+          level: response.data.user.level,
+          admin: response.data.user.admin,
+          loginCount: response.data.user.loginCount,
         };
         console.log("LOGGED IN");
         modalText = "Logged In Successfully !!";
@@ -255,14 +251,14 @@ class Signin extends Component {
               <Button sx={btn}>
                 <Link
                   style={{ textDecoration: "None", color: "black" }}
-                  href={`/forgotpassword`}
+                  to={`/forgotpassword`}
                 >
                   Forgot Password
                 </Link>
               </Button>
               <Link
                 style={{ textDecoration: "None", color: "black" }}
-                href="/register"
+                to="/register"
               >
                 <Button sx={btn}>New User? Sign Up</Button>
               </Link>
@@ -283,9 +279,14 @@ class Signin extends Component {
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
               <Link
                 style={{ textDecoration: "None", color: "black" }}
-                href={this.state.lastpage}
+                to={this.state.lastpage}
               >
-                <Button style={buttons} variant="contained" color="primary">
+                <Button
+                  style={buttons}
+                  variant="contained"
+                  color="primary"
+                  onClick={this.navigation}
+                >
                   {this.state.message}
                 </Button>
               </Link>

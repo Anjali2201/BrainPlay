@@ -6,9 +6,13 @@ import Navbar from "./Components/Navbar";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import { Routes, Route } from "react-router-dom";
+import Scoreboard from "./Pages/Scoreboard";
 import Game1 from "./Pages/game1";
 import Game2 from "./Pages/game2";
 import Game3 from "./Pages/game3";
+import Game4 from "./Pages/game4";
+import Admin from "./Pages/Admin";
+import Completed from "./Pages/Completed";
 
 const App = () => {
   return (
@@ -22,6 +26,10 @@ const App = () => {
         <Route path="/game1" element={<Game1 />} />
         <Route path="/game2" element={<Game2 />} />
         <Route path="/game3" element={<Game3 />} />
+        <Route path="/game4" element={<Game4 />} />
+        <Route path="/profile" element={<Scoreboard />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/completed" element={<Completed />} />
       </Routes>
     </div>
   );

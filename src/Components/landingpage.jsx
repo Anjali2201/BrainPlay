@@ -20,7 +20,21 @@ const Landingpage = () => {
 
   const startGame = () => {
     handleClose();
-    window.location.href = "/game1";
+    const login = getCookie("login");
+    const logParse= JSON.parse(login);
+    if(logParse.level == 1){
+      window.location.href = "/game1";
+    }
+    if(logParse.level == 2){
+      window.location.href = "/game2";
+    }
+    if(logParse.level == 3){
+      window.location.href = "/game3";
+    }
+    if(logParse.level == 4){
+      window.location.href = "/game4";
+    }
+    //window.location.href = "/game1";
   };
 
   return (

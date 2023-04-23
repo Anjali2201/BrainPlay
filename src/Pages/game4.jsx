@@ -1,7 +1,28 @@
 import React from "react";
 import { Button, Grid, Typography, TextField } from "@mui/material";
+import { useState, useEffect } from "react";
 
-const game1 = () => {
+const game4 = () => {
+  const [clicked, setClicked] = useState(false);
+  const [displayed, setDisplayed] = useState(false);
+
+  useEffect(() => {
+    let timeoutId;
+    if (displayed) {
+      timeoutId = setTimeout(() => {
+        setDisplayed(false);
+      }, 5000);
+    }
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [displayed]);
+
+  const handleClick = () => {
+    setClicked(true);
+    setDisplayed(true);
+  };
+
   return (
     <div>
       <Grid
@@ -33,15 +54,17 @@ const game1 = () => {
           >
             Instructions
           </Typography>
+          {!clicked && (
+            <Button variant="contained" color="primary" onClick={handleClick}>
+              Click me!
+            </Button>
+          )}
+          {displayed && <p>The button was clicked!</p>}
+
+          <br />
+
           <Typography variant="h6" sx={{ color: "black" }}>
-            Your challenge requires you to use your communication skills to
-            decipher the following riddle:
-            <br />
-            I am not alive, but I grow; <br />
-            I don't have lungs, but I need air; <br />
-            I don't have a mouth, but I need water; <br />
-            What am I? Once you have solved the riddle, head over to the next
-            clue. Good luck!"
+            Write all the adjectives used in the above paragraph.
           </Typography>
           <TextField
             id="outlined-basic"
@@ -60,4 +83,4 @@ const game1 = () => {
   );
 };
 
-export default game1;
+export default game4;

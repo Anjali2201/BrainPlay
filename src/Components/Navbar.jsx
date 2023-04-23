@@ -188,7 +188,9 @@ export default function Appbar(props) {
                 <Button sx={styles.btn} onClick={logout}>
                   Logout
                 </Button>
-                <Button sx={styles.btn}>{username}</Button>
+                <Link to="/profile" style={{ textDecoration: "none" }}>
+                  <Button sx={styles.btn}>{username}</Button>
+                </Link>
               </ButtonGroup>
             )}
           </Grid>
