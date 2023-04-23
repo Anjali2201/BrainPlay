@@ -6,13 +6,14 @@ import Navbar from "./Components/Navbar";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import { Routes, Route } from "react-router-dom";
-import Scoreboard from "./Pages/Scoreboard";
+import Scoreboard from "./Pages/Profile";
 import Game1 from "./Pages/game1";
 import Game2 from "./Pages/game2";
 import Game3 from "./Pages/game3";
 import Game4 from "./Pages/game4";
 import Admin from "./Pages/Admin";
 import Completed from "./Pages/Completed";
+import Leaderboard from "./Pages/leaderboard";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/profile" element={<Scoreboard />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/completed" element={<Completed />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
     </div>
   );

@@ -110,7 +110,7 @@ const game1 = () => {
         removeCookie("login");
         setCookie("login", JSON.stringify(cookieState));
         axios
-          .post("http://localhost:8000/api/game/level1", {
+          .post("https://super-ruby-rugby-shirt.cyclic.app/api/game/level1", {
             email: loginp.email,
             complete: true,
             endtime: totalTime,
@@ -127,7 +127,7 @@ const game1 = () => {
         setLastpage("/game2");
       } else {
         axios
-          .post("http://localhost:8000/api/game/level1", {
+          .post("https://super-ruby-rugby-shirt.cyclic.app/api/game/level1", {
             email: loginp.email,
             complete: false,
             endtime: 0,

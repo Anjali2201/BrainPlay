@@ -13,33 +13,29 @@ import {
 
 import { Grid, Typography, Divider } from "@mui/material";
 
-const data = [
-  {
-    level: "level 1",
-    score: 4000,
-    time: 240,
-  },
-  {
-    level: "level 2",
-    score: 3000,
-    time: 139,
-  },
-  {
-    level: "level 3",
-    score: 2000,
-    time: 980,
-  },
-  {
-    level: "level 4",
-    score: 2780,
-    time: 3908,
-  },
-  {
-    level: "level 5",
-    score: 1890,
-    time: 4800,
-  },
-];
+// const data = [
+//   {
+//     level: "level 1",
+//     score: 4000,
+//     time: 240,
+//   },
+//   {
+//     level: "level 2",
+//     score: 3000,
+//     time: 139,
+//   },
+//   {
+//     level: "level 3",
+//     score: 2000,
+//     time: 980,
+//   },
+//   {
+//     level: "level 4",
+//     score: 2780,
+//     time: 3908,
+//   },
+
+// ];
 
 const chart = {
   width: 500,
@@ -47,7 +43,32 @@ const chart = {
   margin: "10px",
 };
 
-function Charts() {
+function Charts(props) {
+  const graph = props.graph;
+  console.log(graph);
+  const data = [
+    {
+      level: "Game 1",
+      score: graph[0].score,
+      time: 240,
+    },
+    {
+      level: "Game 2",
+      score: graph[1].score,
+      time: 139,
+    },
+    {
+      level: "Game 3",
+      score: graph[2].score,
+      time: 980,
+    },
+    {
+      level: "Game 4",
+      score: graph[3].score,
+      time: 3908,
+    },
+  ];
+
   return (
     <Grid
       container

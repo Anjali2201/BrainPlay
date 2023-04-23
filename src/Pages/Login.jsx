@@ -80,7 +80,10 @@ class Signin extends Component {
     };
     console.log(newstate);
     axios
-      .post("http://localhost:8000/api/user/login/", newstate)
+      .post(
+        "https://super-ruby-rugby-shirt.cyclic.app/api/user/login/",
+        newstate
+      )
       .then((response) => {
         console.log(response.data.user.name);
         if (response.data.user.admin == true) {

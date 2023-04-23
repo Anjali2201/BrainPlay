@@ -65,7 +65,10 @@ function Signup() {
 
     if (password === cpassword) {
       await axios
-        .post("http://localhost:8000/api/user/signup/", form_data)
+        .post(
+          "https://super-ruby-rugby-shirt.cyclic.app/api/user/signup/",
+          form_data
+        )
         .then((response) => {
           console.log(response);
           modalText = "Registered Successfully";

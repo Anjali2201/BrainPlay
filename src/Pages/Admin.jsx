@@ -26,9 +26,8 @@ const styles = {
     flexDirection: "column",
     borderRadius: "10px",
     p: 2,
-    boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
+    boxShadow: "0px 0px 10px 0px #343A40",
   },
-
   text: {
     textAlign: "center",
     color: "rgba(156, 163, 175)",
@@ -55,17 +54,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     border: 0,
   },
 }));
-function createData(rank, user, level, points, time) {
-  return { rank, user, level, points, time };
-}
-
-const rows = [
-  createData(1, "User1", 1, 100, 10),
-  createData(2, "User2", 2, 200, 20),
-  createData(3, "User3", 3, 300, 30),
-  createData(4, "User4", 4, 400, 40),
-  createData(5, "User5", 5, 500, 50),
-];
 
 const Admin = () => {
   const [data, setData] = useState({
@@ -74,17 +62,19 @@ const Admin = () => {
     totalPoints: 0,
     totalData: [],
   });
+  const [data2, setData2] = useState([]);
   const minute = 1000 * 60;
   const hour = minute * 60;
   useEffect(() => {
     getData();
-  }, data);
+  }, data2);
   const getData = () => {
     axios
-      .get("http://localhost:8000/api/game/admin")
+      .get("https://super-ruby-rugby-shirt.cyclic.app/api/game/admin")
       .then((response) => {
-        console.log(response.data.data);
-        //setData(response.data.data);
+        console.log(response.data.usersData);
+        setData2(response.data.usersData.totalData);
+        setData(response.data.usersData);
       })
       .catch((error) => {
         console.log("Error");
@@ -97,13 +87,19 @@ const Admin = () => {
       sx={{
         justifyContent: "center",
         alignItems: "center",
-        mt: "100px",
         height: "auto",
-        py: 4,
+        backgroundColor: "#212529",
+        minHeight: "100vh",
       }}
     >
-      <Grid item xs={10}>
-        <Typography variant="h4" sx={{ color: "black", fontWeight: "bold" }}>
+      <Grid
+        item
+        xs={10}
+        sx={{
+          mt: "100px",
+        }}
+      >
+        <Typography variant="h4" sx={{ color: "#CED4DA", fontWeight: "bold" }}>
           Admin
         </Typography>
         <Divider sx={{ mt: 2 }} />
@@ -126,25 +122,27 @@ const Admin = () => {
         {/* 1st item */}
         <Grid item sx={styles.features}>
           <PeopleAltIcon sx={{ fontSize: 80, color: "#2952e3" }} />
-          <Typography>Total users: </Typography>
+          <Typography>Total users: {data.totalUsers} </Typography>
         </Grid>
 
         {/* 2nd item */}
         <Grid item sx={styles.features}>
           <RuleIcon sx={{ fontSize: 80, color: "#2952e3" }} />
-          <Typography>Users who completed the game: </Typography>
+          <Typography>
+            Users who completed the game: {data.totalCompleted}{" "}
+          </Typography>
         </Grid>
 
         {/* 3rd item */}
         <Grid item sx={styles.features}>
           <EmojiEventsIcon sx={{ fontSize: 80, color: "#2952e3" }} />
-          <Typography> Highest Point: </Typography>
+          <Typography> Highest Point: {data.totalPoints} </Typography>
         </Grid>
 
         {/* 4th item */}
         <Grid item sx={styles.features}>
           <VideogameAssetIcon sx={{ fontSize: 80, color: "#2952e3" }} />
-          <Typography>Total Games : </Typography>
+          <Typography>Total Games : 4 </Typography>
         </Grid>
       </Grid>
 
@@ -174,18 +172,22 @@ const Admin = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row) => (
+              {data.totalData.map((row) => (
                 <StyledTableRow align="center" key={row.rank}>
                   <StyledTableCell align="center" component="th" scope="row">
                     {row.rank}
                   </StyledTableCell>
-                  <StyledTableCell align="center">{row.user}</StyledTableCell>
+                  <StyledTableCell align="center">
+                    {row.username}
+                  </StyledTableCell>
                   <StyledTableCell align="center">{row.level}</StyledTableCell>
                   <StyledTableCell align="center">
                     {" "}
                     {row.points}{" "}
                   </StyledTableCell>
-                  <StyledTableCell align="center">{row.time}</StyledTableCell>
+                  <StyledTableCell align="center">
+                    {Math.round((row.time / 1000 / 60) % 60)} minutes
+                  </StyledTableCell>
                 </StyledTableRow>
               ))}
             </TableBody>
