@@ -209,7 +209,7 @@ const game4 = () => {
           <Typography
             variant="h4"
             sx={{
-              color: "black",
+              color: "#CED4DA",
               fontWeight: "bold",
             }}
           >
@@ -225,7 +225,8 @@ const game4 = () => {
           >
             A sentence will be displayed on the screen. Read the sentence
             carefully and write all the adjectives used in the sentence. <br />*
-            Note : It will disappear after 5 seconds.
+            Note : It will disappear after 5 seconds. Press enter after writing
+            each word. You can follow random order.
           </Typography>
 
           <br />
@@ -241,12 +242,6 @@ const game4 = () => {
               man.
             </Typography>
           )}
-
-          <br />
-
-          <Typography variant="h6" sx={{ color: "#CED4DA" }}>
-            Write all the adjectives used in the above sentence.
-          </Typography>
 
           {/* // Multi value Input */}
 

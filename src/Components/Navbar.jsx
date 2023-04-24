@@ -85,17 +85,32 @@ export default function Appbar(props) {
       </Link>
       <Divider />
       <List>
-        {buttons.map((item) => (
-          <Link to={`/${item}`} style={{ textDecoration: "none" }}>
-            <ListItem key={item} disablePadding>
+        {!token ? (
+          buttons.map((item) => (
+            <Link to={`/${item}`} style={{ textDecoration: "none" }}>
+              <ListItem key={item} disablePadding>
+                <ListItemButton sx={{ textAlign: "center" }}>
+                  <ListItemText>
+                    <Typography sx={styles.menutext}>{item}</Typography>
+                  </ListItemText>
+                </ListItemButton>
+              </ListItem>
+            </Link>
+          ))
+        ) : (
+          <Link to="/profile" style={{ textDecoration: "none" }}>
+            <ListItem disablePadding>
               <ListItemButton sx={{ textAlign: "center" }}>
                 <ListItemText>
-                  <Typography sx={styles.menutext}>{item}</Typography>
+                  <Typography sx={styles.menutext}>{username}</Typography>
+                  <Button onClick={logout} sx={styles.menutext}>
+                    Logout
+                  </Button>
                 </ListItemText>
               </ListItemButton>
             </ListItem>
           </Link>
-        ))}
+        )}
       </List>
     </Box>
   );
@@ -179,9 +194,9 @@ export default function Appbar(props) {
               </ButtonGroup>
             ) : (
               <ButtonGroup variant="text">
-                <Button sx={styles.btn} 
-                href="/leaderboard"
-                >LeaderBoard</Button>
+                <Button sx={styles.btn} href="/leaderboard">
+                  LeaderBoard
+                </Button>
                 <Button sx={styles.btn} onClick={logout}>
                   Logout
                 </Button>

@@ -121,35 +121,42 @@ const Admin = () => {
       >
         {/* 1st item */}
         <Grid item sx={styles.features}>
-          <PeopleAltIcon sx={{ fontSize: 80, color: "#2952e3" }} />
-          <Typography>Total users: {data.totalUsers} </Typography>
+          <PeopleAltIcon sx={{ fontSize: 80, color: "#3772ff" }} />
+          <Typography sx={{ color: "#CED4DA", fontWeight: "bold" }}>
+            Total users: {data.totalUsers}{" "}
+          </Typography>
         </Grid>
 
         {/* 2nd item */}
         <Grid item sx={styles.features}>
-          <RuleIcon sx={{ fontSize: 80, color: "#2952e3" }} />
-          <Typography>
+          <RuleIcon sx={{ fontSize: 80, color: "#f9c80e" }} />
+          <Typography sx={{ color: "#CED4DA", fontWeight: "bold" }}>
             Users who completed the game: {data.totalCompleted}{" "}
           </Typography>
         </Grid>
 
         {/* 3rd item */}
         <Grid item sx={styles.features}>
-          <EmojiEventsIcon sx={{ fontSize: 80, color: "#2952e3" }} />
-          <Typography> Highest Point: {data.totalPoints} </Typography>
+          <EmojiEventsIcon sx={{ fontSize: 80, color: "#1282a2" }} />
+          <Typography sx={{ color: "#CED4DA", fontWeight: "bold" }}>
+            {" "}
+            Highest Point: {data.totalPoints}{" "}
+          </Typography>
         </Grid>
 
         {/* 4th item */}
         <Grid item sx={styles.features}>
-          <VideogameAssetIcon sx={{ fontSize: 80, color: "#2952e3" }} />
-          <Typography>Total Games : 4 </Typography>
+          <VideogameAssetIcon sx={{ fontSize: 80, color: "#f64f59" }} />
+          <Typography sx={{ color: "#CED4DA", fontWeight: "bold" }}>
+            Total Games : 4{" "}
+          </Typography>
         </Grid>
       </Grid>
 
       <Grid item xs={10} sx={{ mt: 5 }}>
         <Typography
           variant="h4"
-          sx={{ color: "black", fontWeight: "bold", m: 3 }}
+          sx={{ color: "#ADB5BD", fontWeight: "bold", m: 3 }}
         >
           User Analytics
         </Typography>

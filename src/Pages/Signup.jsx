@@ -20,14 +20,15 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
-
 const textfield = {
   "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-    borderColor: "black",
+    borderColor: "#CED4DA",
   },
   m: 1,
+  "& .MuiOutlinedInput-input": {
+    color: "white",
+  },
 };
-
 function Signup() {
   const form = useRef();
   const navigate = useNavigate();
@@ -98,52 +99,31 @@ function Signup() {
         height: "100vh",
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#212529",
       }}
     >
-      {/* -------------------------left grid------------------- */}
-      <Grid
-        item
-        xs={5}
-        sx={{
-          display: {
-            xs: "none",
-            sm: "none",
-            md: "none",
-            lg: "flex",
-          },
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "#ffffff",
-          height: "100vh",
-          p: 4,
-        }}
-      >
-        <Typography variant="h3" style={{ color: "black", textAlign: "right" }}>
-          Join Us! <br />
-          Explore the world of Technologies <br />
-        </Typography>
-      </Grid>
-
       {/* ------------------------------------------------------ */}
       <Grid
         item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={5}
+        xs={10}
         sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "#ffffff",
           p: 5,
+          boxShadow: "0px 0px 10px 0px #343A40",
         }}
       >
-        <Grid item>
+        <Grid
+          item
+          sx={{
+            width: "50%",
+          }}
+        >
           <Typography
             variant="h4"
             sx={{
-              color: "black",
+              color: "#CED4DA",
               fontWeight: "bold",
               textAlign: "center",
               m: 2,
@@ -154,22 +134,20 @@ function Signup() {
           <form ref={form} onSubmit={RegisterUser}>
             <TextField
               style={text}
-              required
               name="name"
               fullWidth
               label={
-                <Typography style={{ color: "black" }}>Full Name</Typography>
+                <Typography style={{ color: "#CED4DA" }}>Full Name</Typography>
               }
               sx={textfield}
             />
 
             <TextField
               style={text}
-              required
               name="email"
               fullWidth
               label={
-                <Typography style={{ color: "black" }}>
+                <Typography style={{ color: "#CED4DA" }}>
                   Email Address
                 </Typography>
               }
@@ -177,23 +155,21 @@ function Signup() {
             />
             <TextField
               style={text}
-              required
               name="password"
               type="password"
               fullWidth
               label={
-                <Typography style={{ color: "black" }}>Password</Typography>
+                <Typography style={{ color: "#CED4DA" }}>Password</Typography>
               }
               sx={textfield}
             />
             <TextField
               style={text}
-              required
               name="confirm"
               type="password"
               fullWidth
               label={
-                <Typography style={{ color: "black" }}>
+                <Typography style={{ color: "#CED4DA" }}>
                   Confirm Password
                 </Typography>
               }
@@ -204,10 +180,12 @@ function Signup() {
               sx={{
                 margin: "8px",
                 height: 50,
-                backgroundColor: "#F9A826",
+                backgroundColor: "#CED4DA",
+                color: "black",
                 "&:hover": {
+                  color: "black",
                   border: "1px solid black",
-                  backgroundColor: "#F9A826",
+                  backgroundColor: "#CED4DA",
                 },
               }}
               type="submit"

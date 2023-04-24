@@ -2,15 +2,14 @@ import React from "react";
 import { Button, ButtonGroup, Grid, Typography } from "@mui/material";
 
 const btn = {
-  my: 2,
-  color: "#FFE6BC",
-  mx: 1,
-  width: "auto",
-
+  margin: "8px",
+  height: 50,
+  backgroundColor: "#CED4DA",
+  color: "black",
   "&:hover": {
-    color: "#E8D8C9",
-    borderBottom: "3px solid #9A8174",
-    borderRadius: "0px",
+    color: "black",
+    border: "1px solid black",
+    backgroundColor: "#CED4DA",
   },
 };
 
@@ -23,6 +22,7 @@ const Completed = () => {
           minHeight: "100vh",
           justifyContent: "center",
           alignItems: "center",
+          backgroundColor: "#212529",
         }}
       >
         <Grid
@@ -37,7 +37,7 @@ const Completed = () => {
         >
           <Typography
             variant="h4"
-            sx={{ textAlign: "center", color: "black", fontWeight: "bold" }}
+            sx={{ textAlign: "center", color: "#CED4DA", fontWeight: "bold" }}
           >
             Congratulations! You have completed the game.
           </Typography>

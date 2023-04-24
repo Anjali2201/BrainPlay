@@ -204,10 +204,7 @@ const game2 = () => {
             pattern is based on the positions of the letters in the English
             alphabet.
             <br />
-            For example, the first letter "A" is in position 1, the second
-            letter "B" is in position 2, and so on. Using this pattern, can you
-            decode the message and find the hidden treasure? Hint: The pattern
-            is related to a famous Scientist.
+            Hint: The pattern is related to a famous Scientist.
             <br />
             <br />
             *Note: The answer is a name. Write the answer in small letters.
