@@ -1,15 +1,9 @@
 <h1 align="center"> BrainPlay </h1> <br>
 
-<!-- <p align="center">
-  <a href="https://gitpoint.co/">
-    <img alt="GitPoint" title="GitPoint" src="https://user-images.githubusercontent.com/82889656/232326494-7bdb5e0f-c953-4d85-80a9-6d576a691620.png" width="450">
-  </a>
-</p> -->
-
 <h2 align="center">
 "Play your way to success with BrainPlay: Where soft skills meet fun!"
 
-[Visit Website](https://brain-play.vercel.app/)
+[Visit Website](https://brainplay.netlify.app/)
 
 </h2>
 
