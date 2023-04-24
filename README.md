@@ -59,6 +59,10 @@ BrainPlay is a Soft Skill Testing Fun Game. It is an innovative and engaging gam
 
       - Session Storage: Cookies are used to store level, user game data. On Refreshing browser or starting a new session the game will resume from the level the user is currently on and time is added and tracked from last session.
 
+- **Admin Panel**:
+
+      - Admin can view all users and their game data.
+
 # Additional Features
 
 - **User Analytics**:
@@ -69,7 +73,16 @@ BrainPlay is a Soft Skill Testing Fun Game. It is an innovative and engaging gam
 
       Every user who completed the game successfully is displayed on leaderboard. User's Rank, Username and Total time taken is displayed.
 
-<hr>
+- **Admin Dashboard**:
+
+        Admin can view all users and their game data.
+        -----------------------------------
+        | Email for admin: admin@gmail.com   |
+        | Password: admin                    |
+        | Append `/admin` in url             |
+        ------------------------------------
+
+  <hr>
 
 # Soft Skills
 
