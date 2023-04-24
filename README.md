@@ -80,12 +80,6 @@ BrainPlay is a Soft Skill Testing Fun Game. It is an innovative and engaging gam
 
 # Soft Skills
 
-<!-- - **Simple Awareness Test**
-- **Reading and Analysing Test**
-- **Visual Observation and Responsibility Test**
-- **Decision making and Deducing Test**
-- **Problem Solving and Riddle Test** -->
-
      Level 1: Test the Problem Solving skills of User.
      Level 2: Test the Reading and Analysis with Problem solving skill.
      Level 3: Test the Visual Observation and critical thinking.
