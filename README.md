@@ -1,7 +1,11 @@
-<h1 align="center"> BrainPlay </h1> <br>
+<h1 align="center"> 
+BrainPlay   👩‍💻🧠🎮
+</h1> <br>
+
+<img  src="https://user-images.githubusercontent.com/86847380/234115631-582e3dd3-a0f5-4ea4-af8f-91bc679a75e4.png" width="100%" height="100%">
 
 <h2 align="center">
-"Play your way to success with BrainPlay: Where soft skills meet fun!"
+"Play your way to success with BrainPlay: Where soft skills meet fun! " 💫
 
 [Visit Website](https://brainplay.netlify.app/)
 
@@ -9,7 +13,7 @@
 
 <hr>
 
-## Table of Contents
+## ✍️ Table of Contents
 
 - [Introduction](#introduction)
 - [Implemented Features](#Implementedfeatures)
@@ -18,54 +22,64 @@
 - [Puzzles and Solutions](#games)
 - [Technologies](#technologies)
 
-# Introduction
+# 🔗 Introduction
 
 BrainPlay is a Soft Skill Testing Fun Game. It is an innovative and engaging game designed to test users' soft skills. It offers a fun and interactive way for users to develop and showcase their soft skills while enjoying a challenging gaming experience.
 
+<br/>
+
 <hr>
 
-# Implemented Features
+# Implemented Features ⚡
 
-- **Authentication**:
+- 🔒 **Authentication**:
 
-      1. Login/Signup Page
-      2. Password is Stored in hash.
+  1. Login/Signup Page
+  2. Password is Stored in hash.
 
-- **Contains 4 Simple Puzzles**:
+  <img src=" https://user-images.githubusercontent.com/86847380/234113614-aedfeed4-c447-4bba-8bd9-b94028d5a4bc.png" width="100%" height="100%">
+
+- 🧩 **Contains 4 Simple Puzzles**:
 
       - 4 Levels
       - Hidden clues in each level
       - One Solution
 
-- **User Progress**:
+- 🚩 **User Progress**:
 
       - Time taken at each level
       - Attempts
       - Points
 
-- **User Profile**:
+- 👩‍💻 **User Profile**:
 
       - User's Game Analysis
       - Graph Visualization between levels, score and time
       - Rank, Points, Time
 
-- **Browser Compatibility**:
+  <img src=" https://user-images.githubusercontent.com/86847380/234115158-1a44d5a5-4739-42fb-8f97-51543b8d8938.png" width="100%" height="100%">
+
+- 🔗 **Browser Compatibility**:
 
       - Session Storage: Cookies are used to store level, user game data. On Refreshing browser or starting a new session the game will resume from the level the user is currently on and time is added and tracked from last session.
 
-- **Admin Panel**:
+- 🖥️ **Admin Panel**:
 
       - Admin can view all users and their game data.
 
-# Additional Features
+   <img src=" https://user-images.githubusercontent.com/86847380/234112976-2c4e65fb-f775-4cee-9ba9-30779bc1b4e3.png" width="100%" height="100%">
 
-- **User Analytics**:
+# Additional Features 🚸
+
+- 🛠️ **User Analytics**:
 
       Time taken to solve each puzzle and attempts taken to solve it is stored and tracked with other user's data. Provides analysis on how you performed compared to best player and average players.
 
-- **Leaderboard**:
+- 🏆 **Leaderboard**:
 
       Every user who completed the game successfully is displayed on leaderboard. User's Rank, Username and Total time taken is displayed.
+
+   <img src=" https://user-images.githubusercontent.com/86847380/234115354-79290bb3-c141-4df0-bf9c-7dac5297e77f.png" width="100%" height="100%">
 
 - **Admin Dashboard**:
 
@@ -78,7 +92,7 @@ BrainPlay is a Soft Skill Testing Fun Game. It is an innovative and engaging gam
 
   <hr>
 
-# Soft Skills
+# Soft Skills 🕓
 
      Level 1: Test the Problem Solving skills of User.
      Level 2: Test the Reading and Analysis with Problem solving skill.
@@ -87,7 +101,7 @@ BrainPlay is a Soft Skill Testing Fun Game. It is an innovative and engaging gam
 
 <hr>
 
-# Puzzles and Solutions
+# Puzzles and Solutions 👁️‍🗨️🔍
 
 Level 1:
 
@@ -141,7 +155,7 @@ Level 4:
 
 <hr>
 
-## Technologies
+## Technologies 🛠️
 
 <table>
 <tr >
@@ -175,4 +189,4 @@ Backend: https://super-ruby-rugby-shirt.cyclic.app/
 <br/>
 <hr>
 
-## Thank You!
+## Thank You! 🙏
